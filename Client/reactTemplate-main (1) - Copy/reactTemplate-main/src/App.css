@@ -1,0 +1,137 @@
+.App {
+  text-align: center;
+  color: white;
+  padding: 20px;
+  min-height: 90vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-family: Arial, sans-serif;
+  background: linear-gradient(to bottom right, #2980b9, #6dd5fa, #ffffff);
+}
+
+h1 {
+  color: transparent;
+  margin-bottom: 20px;
+  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+  -webkit-background-clip: text;
+  font-size: 40px;
+}
+
+.Scoreboard {
+  margin: 20px 0;
+  font-size: 1.5em;
+  font-weight: 700;
+  background: linear-gradient(to right, #0f2027, #203a43, #2c5364);
+  -webkit-background-clip: text;
+  color: transparent;
+}
+
+.Board {
+  display: grid;
+  gap: 15px;
+  justify-content: center;
+}
+
+.Card {
+  width: 100px;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(to right, #5c258d, #4389a2);
+  border: 2px solid #ffffff;
+  border-radius: 10px;
+  font-size: 2em;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 19px 38px, rgba(0, 0, 0, 0.22) 0px 15px 12px;
+}
+
+.Card.revealed,
+.Card.matched {
+  background: linear-gradient(to right, #1f4037, #99f2c8);
+  color: #ffffff;
+  transform: scale(1.1);
+}
+
+.Card:hover {
+  background: linear-gradient(to right, #4568dc, #b06ab3);
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 1.2em;
+  color: #cb1720;
+  background-color: #61dafb;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s, transform 0.3s;
+  margin-top: 20px;
+}
+
+input {
+  padding: 10px;
+  font-size: 1em;
+  border: 2px solid grey;
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 30px 60px -12px inset, rgba(0, 0, 0, 0.3) 0px 18px 36px -18px inset;
+  border-radius: 5px;
+  color: #333;
+  background-color: #ffffff;
+  margin-bottom: 20px;
+}
+
+input:focus {
+  outline: none;
+  border-color: #4caf50;
+  box-shadow: 0 0 5px rgba(76, 175, 80, 0.5);
+}
+
+.message {
+  color: #cb1720;
+  font-size: 1.2em;
+  margin-top: 20px;
+}
+
+@media (min-width: 600px) {
+  .Board {
+    grid-template-columns: repeat(4, 100px);
+    grid-template-rows: repeat(2, 100px);
+  }
+}
+
+@media (max-width: 599px) {
+  .Board {
+    grid-template-columns: repeat(4, 50px);
+    grid-template-rows: repeat(2, 50px);
+  }
+  .Card {
+    width: 60px;
+    height: 60px;
+    font-size: 1.5em;
+  }
+}
+
+@media (max-width: 399px) {
+  .Board {
+    grid-template-columns: repeat(4, 20px);
+    grid-template-rows: repeat(4, 20px);
+  }
+
+  .Card {
+    width: 20px;
+    height: 20px;
+    font-size: 1.5em;
+  }
+
+  button {
+    padding: 8px 16px;
+    font-size: 1em;
+  }
+
+  input {
+    font-size: 0.9em;
+  }
+}
